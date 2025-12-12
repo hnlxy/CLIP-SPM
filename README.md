@@ -171,7 +171,9 @@ At the same time, our work was inspired by the following paper, for which we exp
 
 ## License Information
 
-This project is licensed under the MIT License. For more details, please refer to the LICENSE file.
+## License
+
+This project is licensed under the terms of the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 ## Change Log
 
