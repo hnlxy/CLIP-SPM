@@ -144,7 +144,7 @@ When you want to test, modify the ONLY_TEST parameter in the configuration file 
    sh train_test.sh
    ```
 
-### Pretrained Model Download Links
+### Pretrained Model
 
 Baidu Netdisk: [Checkpoints](https://pan.baidu.com/s/1WzV8uXlbYu_bWe-xvaYafg?pwd=284q) pwd: 284q
 
@@ -168,8 +168,6 @@ At the same time, our work was inspired by the following paper, for which we exp
    publisher={Elsevier}
 }
 ```
-
-## License Information
 
 ## License
 
