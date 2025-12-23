@@ -146,7 +146,7 @@ When you want to test, modify the ONLY_TEST parameter in the configuration file 
 
 ### Pretrained Model Download Links
 
-Aliyun Drive: [CLIP-SPM Pretrained Models](https://www.alipan.com/s/J2QgmHjC3CS)
+Baidu Netdisk: [Checkpoints](https://pan.baidu.com/s/1WzV8uXlbYu_bWe-xvaYafg?pwd=284q) pwd: 284q
 
 ## Citation Information
 
