@@ -16,8 +16,6 @@ Distinguishing visually similar actions is a key challenge in few-shot action re
 2. Designed a prompt-guided semantic prototype modulation mechanism that achieves deep fusion of semantic and visual information
 3. Achieved excellent performance on multiple benchmark datasets, demonstrating the effectiveness and generalization ability of the method
 
-All code will be open-sourced upon paper acceptance.
-
 ## Architecture
 
 ![CLIP-SPM Architecture](./imgs/architecture.png)
@@ -152,13 +150,18 @@ Baidu Netdisk: [Checkpoints](https://pan.baidu.com/s/1WzV8uXlbYu_bWe-xvaYafg?pwd
 
 If you use the code or models from this project, please cite our paper:
 
-```
-
+```latex
+@article{li2025_2512.19036,
+  title={Distinguishing Visually Similar Actions: Prompt-Guided Semantic Prototype Modulation for Few-Shot Action Recognition},
+  author={Xiaoyang Li and Mingming Lu and Ruiqi Wang and Hao Li and Zewei Le},
+  journal={arXiv preprint arXiv:2512.19036},
+  year={2025}
+}
 ```
 
 At the same time, our work was inspired by the following paper, for which we express our gratitude:
 
-```
+```latex
 @article{deng2025clip,
    title={CLIP-MEI: Exploit more effective information for few-shot action recognition},
    author={Deng, XuanHan and Yang, WenZhu and Zhao, XinBo and Zhou, Tong and Deng, Xin},

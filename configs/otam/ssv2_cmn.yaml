@@ -1,0 +1,35 @@
+DEBUG: true
+MODEL:
+  NAME: 'otam'
+  BACKBONE: 'resnet50'          # ["resnet18", "resnet34", "resnet50"]
+  SEED: 0
+
+TRAIN:
+  WAY: 5
+  SHOT: 1
+  QUERY_PER_CLASS: 1
+
+  TRAIN_EPISODES: 20010
+  VAL_FREQ: 5000
+
+TEST:
+  ONLY_TEST: false
+  QUERY_PER_CLASS: 1
+  TEST_EPISODES: 3000
+  #TEST_MODEL_PATH: '/home/zhangbin/tx/FSAR/test_ckp/otam/checkpoint_ucf.pt'
+  TEST_MODEL_PATH: 'checkpoint/ssv2_cmn/1shot/otam/checkpoint_last.pt'
+
+DATA:
+  DATASET: 'ssv2_cmn'   # ["ssv2", 'ssv2_cmn', "kinetics", "hmdb", "ucf"]
+  DATA_DIR: '/home/zhangbin/tx/datasets/ssv2'
+  SEQ_LEN: 8
+  IMG_SIZE: 224
+  NUM_WORKERS: 8
+
+CHECKPOINT:
+  CHECKPOINT_DIR: 'checkpoint/ssv2_cmn/1shot/otam'
+  SAVE_FREQ: 20000
+
+SOLVER:
+  LR: 0.0001
+  OPTIM_METHOD: 'sgd'   # ["adam", "sgd"]

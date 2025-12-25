@@ -1,0 +1,54 @@
+INFO: ''
+DEBUG: false
+USE_AMP: false
+MODEL:
+  NAME: ''
+  BACKBONE: 'resnet50'
+  SEED: 0
+  METRIC: 'cos'
+  DROPOUT: 0.5
+  TRANS_LINEAR_OUT_DIM: 1152
+
+DEVICE:
+  DEVICE: 'cuda'
+  NUM_GPUS: 1
+  GPU_ID: 0
+
+TRAIN:
+  WAY: 5
+  SHOT: 1
+  QUERY_PER_CLASS: 5
+
+  TRAIN_EPISODES: 75010
+  VAL_FREQ: 500
+  PRINT_FREQ: 500
+  TASKS_PER_BATCH: 16
+
+TEST:
+  ONLY_TEST: false
+  QUERY_PER_CLASS: 1
+  TEST_EPISODES: 10000
+  TEST_MODEL_PATH: ''
+
+DATA:
+  DATASET: 'ssv2'
+  DATA_DIR: '/mnt/home/lxy/datasets/ssv2'
+  SEQ_LEN: 8
+  SPLIT: 3
+  IMG_SIZE: 224
+  IMG_NORM: false
+  NUM_WORKERS: 10
+  DEBUG_LOADER: false   # Load 1 vid per class for debugging
+
+CHECKPOINT:
+  CHECKPOINT_DIR: 'checkpoints/'
+  SAVE_FREQ: 10000
+  RESUME_FROM_CHECKPOINT: false
+
+
+SOLVER:
+  LR: 0.001
+  LR_SCH: 1000000
+  OPTIM_METHOD: 'sgd'
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 1e-3

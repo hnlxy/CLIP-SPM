@@ -1,0 +1,8 @@
+tensorboard
+tqdm
+nni
+matplotlib
+scipy
+einops
+ftfy
+regex

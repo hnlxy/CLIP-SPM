@@ -1,0 +1,46 @@
+DEBUG: false
+MODEL: 
+  NAME: 'cpm2c'
+  BACKBONE: 'RN50'          # ["RN50", "ViT-B/16"]
+  SEED: 6
+  USE_CLASSIFICATION: true
+  USE_CLASSIFICATION_VALUE: 3.0
+  MOTION_COFF: 1.
+  NORMAL_COFF: 1.
+  LMD: [0.5, 1, 0]
+
+
+TRAIN:
+  WAY: 5
+  SHOT: 3
+  QUERY_PER_CLASS: 4
+
+  TRAIN_EPISODES: 20010
+  # TRAIN_EPISODES: 6010
+  VAL_FREQ: 1000
+  CLASS_NAME: ['brush hair', 'catch', 'chew', 'clap', 'climb', 'climb stairs', 'dive', 'draw_sword', 'dribble', 'drink', 'fall floor', 'flic flac', 'handstand', 'hug', 'jump', 'kiss', 'pullup', 'punch', 'push', 'ride_bike', 'ride horse', 'shake_hands', 'shoot_bow', 'situp', 'stand', 'sword', 'sword exercise', 'throw', 'turn', 'walk', 'wave']
+  
+TEST:
+  ONLY_TEST: false
+  QUERY_PER_CLASS: 1
+  # TEST_EPISODES: 10000
+  TEST_EPISODES: 3000
+  TEST_MODEL_PATH: 'checkpoints/hmdb/3shot/cpm2c/checkpoint_best.pt'
+  CLASS_NAME: ['fencing', 'kick', 'kick ball', 'pick', 'pour', 'pushup', 'run', 'sit', 'smoke', 'talk']
+
+DATA:
+  DATASET: 'hmdb'   # ["ssv2", 'ssv2_cmn', "kinetics", "hmdb", "ucf"]
+  DATA_DIR: '/mnt/home/lxy/datasets/'
+  SEQ_LEN: 8
+  IMG_SIZE: 224
+  NUM_WORKERS: 8
+
+CHECKPOINT:
+  CHECKPOINT_DIR: 'checkpoints/hmdb/3shot/cpm2c'
+  SAVE_FREQ: 1000
+
+SOLVER:
+  LR: 0.00001
+  WEIGHT_DECAY: 5e-5
+  OPTIM_METHOD: 'adam'   # ["adam", "sgd"]
+

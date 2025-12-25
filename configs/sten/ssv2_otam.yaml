@@ -1,0 +1,37 @@
+MODEL: 
+  NAME: 'sten'
+  BACKBONE: 'RN50'          # ["RN50", "ViT-B/16"]
+  SEED: 0
+
+TRAIN:
+  WAY: 5
+  SHOT: 1
+  QUERY_PER_CLASS: 4
+  TRAIN_EPISODES: 30010
+  VAL_FREQ: 1000
+  CLASS_NAME: ['Bending [something] until it breaks', 'Closing [something]', 'Covering [something] with [something]', 'Dropping [something] behind [something]', 'Dropping [something] in front of [something]', 'Dropping [something] into [something]', 'Folding [something]', 'Holding [something]', 'Holding [something] next to [something]', 'Letting [something] roll along a flat surface', 'Letting [something] roll down a slanted surface', 'Lifting a surface with [something] on it but not enough for it to slide down', 'Lifting [something] with [something] on it', 'Moving away from [something] with your camera', 'Moving [something] across a surface until it falls down', 'Moving [something] and [something] closer to each other', 'Moving [something] and [something] so they collide with each other', 'Moving [something] down', 'Moving [something] up', 'Plugging [something] into [something]', 'Poking a hole into [something soft]', "Poking [something] so lightly that it doesn't or almost doesn't move", 'Poking [something] so that it falls over', 'Pouring [something] into [something]', 'Pouring [something] into [something] until it overflows', 'Pouring [something] onto [something]', 'Pretending to be tearing [something that is not tearable]', 'Pretending to close [something] without actually closing it', 'Pretending to pick [something] up', 'Pretending to put [something] next to [something]', 'Pretending to spread air onto [something]', 'Pretending to take [something] out of [something]', 'Pulling [something] onto [something]', 'Pulling two ends of [something] so that it gets stretched', 'Pulling two ends of [something] so that it separates into two pieces', 'Pushing [something] from left to right', 'Pushing [something] off of [something]', 'Pushing [something] so that it falls off the table', 'Pushing [something] so that it slightly moves', 'Putting [number of] [something] onto [something]', 'Putting [something] and [something] on the table', "Putting [something] onto a slanted surface but it doesn't glide down", 'Putting [something] onto [something]', 'Putting [something similar to other things that are already on the table]', 'Showing a photo of [something] to the camera', 'Showing [something] behind [something]', '[Something] colliding with [something] and both are being deflected', 'Spilling [something] next to [something]', 'Spilling [something] onto [something]', 'Spinning [something] that quickly stops spinning', 'Spreading [something] onto [something]', 'Squeezing [something]', 'Stuffing [something] into [something]', 'Taking [something] from [somewhere]', 'Tearing [something] into two pieces', "Tilting [something] with [something] on it slightly so it doesn't fall down", 'Tilting [something] with [something] on it until it falls off', 'Tipping [something] with [something in it] over, so [something in it] falls out', 'Turning the camera downwards while filming [something]', 'Turning the camera left while filming [something]', 'Turning the camera upwards while filming [something]', 'Twisting (wringing) [something] wet until water comes out', 'Twisting [something]', 'Uncovering [something]']
+  
+TEST:
+  ONLY_TEST: true
+  QUERY_PER_CLASS: 1
+  TEST_EPISODES: 10000
+  TEST_MODEL_PATH: 'checkpoint/ssv2_otam/1shot/sten/checkpoint_best.pt'
+  CLASS_NAME: ['Approaching [something] with your camera', 'Digging [something] out of [something]', 'Dropping [something] next to [something]', 'Dropping [something] onto [something]', 'Failing to put [something] into [something] because [something] does not fit', 'Lifting up one end of [something] without letting it drop down', 'Picking [something] up', 'Poking a stack of [something] without the stack collapsing', 'Pouring [something] out of [something]', 'Pretending to open [something] without actually opening it', 'Pretending to put [something] behind [something]', 'Pretending to put [something] into [something]', 'Pretending to put [something] underneath [something]', 'Pretending to sprinkle air onto [something]', 'Pulling [something] from left to right', 'Pulling [something] out of [something]', 'Pushing [something] from right to left', 'Removing [something], revealing [something] behind', 'Showing [something] next to [something]', 'Showing that [something] is empty', 'Spilling [something] behind [something]', 'Taking [something] out of [something]', 'Throwing [something] in the air and letting it fall', 'Tipping [something] over']
+
+DATA:
+  DATASET: 'ssv2'   # ["ssv2", 'ssv2_cmn', "kinetics", "hmdb", "ucf"]
+  DATA_DIR: '/home/zhangbin/tx/datasets/ssv2'
+  SEQ_LEN: 8
+  IMG_SIZE: 224
+  NUM_WORKERS: 8
+  NUM_CLASS: 64
+
+CHECKPOINT:
+  CHECKPOINT_DIR: 'checkpoint/ssv2_otam/1shot/sten'
+  SAVE_FREQ: 75000
+
+SOLVER:
+  LR: 0.0001 
+  WEIGHT_DECAY: 5e-5
+  OPTIM_METHOD: 'sgd'   # ["adam", "sgd"]
+
